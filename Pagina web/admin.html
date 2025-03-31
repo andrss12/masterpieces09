@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <div class="admin-container">
+        <!-- Formulario para crear usuarios -->
+        <div class="form-container">
+            <h2>Panel de Administración</h2>
+            <form id="adminForm">
+                <input type="text" id="newUsername" placeholder="Nombre de usuario" required>
+                <input type="password" id="newPassword" placeholder="Contraseña" required>
+                <button type="submit">Crear Usuario</button>
+            </form>
+        </div>
+
+        <!-- Lista de usuarios registrados -->
+        <div class="user-list-container">
+            <h3>Usuarios Registrados</h3>
+            <ul id="userList"></ul>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

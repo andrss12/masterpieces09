@@ -1,0 +1,106 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Contenedor principal */
+.admin-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 80%;
+    max-width: 1100px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    gap: 50px; /* Más espacio entre las secciones */
+}
+
+/* Formulario */
+.form-container {
+    width: 48%;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2, h3 {
+    text-align: center;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #218838;
+}
+
+/* Lista de usuarios */
+.user-list-container {
+    width: 48%;
+    max-height: 400px;
+    overflow-y: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+#userList {
+    list-style: none;
+    padding: 0;
+}
+
+#userList li {
+    background: #f1f1f1;
+    margin: 8px 0;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Botón de eliminar usuario más pequeño */
+.deleteBtn {
+    background: red;
+    color: white;
+    border: none;
+    padding: 3px 6px; /* Más compacto */
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 10px; /* Letra más chica */
+    width: auto; /* Ajusta al contenido */
+    text-align: center;
+}
+
+.deleteBtn:hover {
+    background: darkred;
+}

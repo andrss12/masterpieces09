@@ -1,0 +1,386 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+}
+html, body {
+  height: 100vh;
+    margin: 0;
+    overflow: hidden; /* 🔹 Evita el desplazamiento */
+    display: flex;
+    flex-direction: column;
+}
+.logo img {
+  width: 100px;  /* Ajusta el tamaño según necesites */
+  height: 100px; /* Asegura que sea un cuadrado perfecto */
+  border-radius: 50%;
+  object-fit: cover; /* Evita deformaciones */
+}
+ 
+body {
+  background-color: white;
+  background: url('fondopagina.jpg') no-repeat center center fixed;
+  background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll; /* 🔹 Permite que el fondo se desplace en móviles */
+    }
+}
+/*linea gris que separa los botones de la barra de navegacion*/
+.header .nav-links li{
+    border-right: 1px solid #ccc; /* Línea gris */
+    padding-right: 20px;
+    margin-right: 20px;
+}
+/* 🔹 Estilos del Header */
+.header {
+    background: rgba(27, 48, 57, 0.8); /* Fondo con transparencia */
+    backdrop-filter: blur(10px); /* Efecto borroso */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 85px;
+    padding: 10px 5%;
+    position: fixed; /* 🔹 Fijo en la parte superior */
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* 🔹 Asegura que esté por encima de otros elementos */
+    transition: background 0.3s ease-in-out;
+}
+/* 🔹 Logo */
+.header .logo {
+    cursor: pointer;
+    margin-right: auto;
+}
+
+.header .logo img {
+    height: 60px;
+    width: auto;
+    transition: all 0.0s;
+}
+
+.header .logo img:hover {
+    transform: scale(1.2);
+}
+
+/* 🔹 Botón Contact */
+.header .btn button {
+    margin-left: 20px;
+    font-weight: 700;
+    color: #1b3039;
+    padding: 9px 25px;
+    background: #eceff1;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.header .btn button:hover {
+    background-color: #e2f1f8;
+    color: #ffbc0e;
+    transform: scale(1.1);
+}
+
+/* 🔹 Estilos del Menú */
+.header .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.header .nav-links li {
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.header .nav-links li:hover {
+    transform: scale(1.1);
+}
+
+.header .nav-links a {
+    font-weight: 700;
+    color: #eceff1;
+    text-decoration: none;
+}
+
+.header .nav-links li a:hover {
+    color: #FFD700;
+}
+
+/* 🔹 Botón Hamburguesa */
+.menu-btn {
+    color: white;
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* 🔹 Ocultar checkbox */
+#menu-toggle {
+    display: none;
+}
+
+/* 🔹 Diseño para móviles */
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 85px;
+        right: 0;
+        background: rgba(27, 48, 57, 0.95); /* 🔹 Fondo semi-transparente */
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+        box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.3);
+        transition: all 0.5s ease-in-out;
+        border-radius: 0 0 30px 30px;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    .nav-links a {
+        font-size: 22px;
+        padding: 5px;
+        display: block;
+        transition: color 0.3s ease-in-out;
+    }
+
+    .nav-links a:hover {
+        color: #ffbc0e;
+    }
+
+    /* 🔹 Mostrar menú cuando el checkbox está marcado */
+    #menu-toggle:checked + .menu-btn + .nav-links {
+        display: flex;
+        animation: slideDown 0.3s ease-in-out;
+    }
+}
+
+/* 🔹 Animación para el menú */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY();
+    }
+}
+/* 🔹 Asegurar que el menú esté visible en pantallas grandes */
+@media (min-width: 769px) {
+  .nav-links {
+      display: flex !important; /* Asegura que el menú SIEMPRE esté visible */
+      position: static;
+      background: none;
+      width: auto;
+      box-shadow: none;
+      padding: 0;
+  }
+}
+
+
+.mySwiper {
+    max-width: 1200px;
+    width: 100%;
+    padding: 40px 0;
+}
+
+.container {
+    margin: 0 40px;
+    overflow: hidden;
+}
+
+.swiper-slide {
+    font-size: 10px;
+    width: 600px;
+}
+
+.box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.box span {
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    color: #fff;
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.swiper-pagination-bullet {
+    background-color: #fff;
+    width: 9px;
+    height: 9px;
+
+}
+
+
+/* 🔹 Ajuste del Footer */
+.footer {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* 🔹 Contenedor de botones */
+  .social-buttons {
+    display: flex;
+    gap: 20px; /* 🔹 Espacio entre botones */
+  }
+  
+  /* 🔹 Botón de redes sociales */
+  .social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
+    border-radius: 50%;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  /* 🔹 Fondo de cada red social */
+  .social-btn.facebook {
+    background-color: #3b5998; /* Fondo de Facebook */
+  }
+  
+  .social-btn.instagram {
+    background-color: #e4405f; /* Fondo de Instagram */
+  }
+  
+  .social-btn.twitter {
+    background-color: #1da1f2; /* Fondo de Twitter */
+  }
+  
+  /* 🔹 Efecto al pasar el cursor */
+  .social-btn:hover {
+    transform: scale(1.2);
+    opacity: 0.8; /* Efecto de opacidad */
+  }
+  
+  /* 🔹 Ajuste para móviles */
+  @media (max-width: 768px) {
+    .footer {
+        bottom: 15px;
+        left: 10px;
+    }
+    .social-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+    }
+  }
+  
+  
+  /* Efecto de aparición para los botones de redes sociales */
+  .footer .social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 2s ease-out forwards;
+    animation-delay: 0.5s; /* Retraso para que los botones aparezcan después de la carga */
+  }
+  
+  .footer .social-btn {
+    background-color: #3b5998; /* Color de fondo para Facebook */
+    padding: 12px;
+    border-radius: 50%;
+    color: white;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  /* Efecto de escala y cambio de color cuando se pasa el cursor */
+  .footer .social-btn:hover {
+    transform: scale(1.2); /* Aumenta el tamaño del icono */
+    background-color: #4c69ba; /* Color más claro de fondo para Facebook */
+  }
+  
+  .footer .social-btn.instagram {
+    background-color: #e4405f; /* Color de fondo para Instagram */
+  }
+  
+  .footer .social-btn.instagram:hover {
+    background-color: #fc5c8c; /* Cambio de color cuando se pasa el cursor */
+  }
+  
+  .footer .social-btn.twitter {
+    background-color: #1da1f2; /* Color de fondo para Twitter */
+  }
+  
+  .footer .social-btn.twitter:hover {
+    background-color: #1b95e0; /* Cambio de color cuando se pasa el cursor */
+  }
+  
+  
+  
+  .jump-transition {
+    animation: jumpOut 0.5s ease-in forwards;
+  }
+  
+  @keyframes jumpOut {
+    00% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    30% {
+        transform: translateY(-15px); /* Salta hacia arriba */
+        opacity: 0.9;
+    }
+    100% {
+        transform: translateY(30px); /* Baja y desaparece */
+        opacity: 0;
+    }
+  }
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

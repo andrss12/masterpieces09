@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Pieces</title>
+    <link rel="icon" type="image/png" href="logopagina_1.jpg">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+}
+.logo img {
+    width: 100px;  /* Ajusta el tamaño según necesites */
+    height: 100px; /* Asegura que sea un cuadrado perfecto */
+    border-radius: 50%;
+    object-fit: cover; /* Evita deformaciones */
+}
+  .header {
+    background: rgba(27, 48, 57, 0.8); /* Fondo con transparencia */
+    backdrop-filter: blur(10px); /* Efecto borroso */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 85px;
+    padding: 10px 5%;
+    position: fixed; /* 🔹 Fijo en la parte superior */
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* 🔹 Asegura que esté por encima de otros elementos */
+    transition: background 0.3s ease-in-out;
+}
+  /* 🔹 Logo */
+.header .logo {
+    cursor: pointer;
+    margin-right: auto;
+}
+/*linea gris que separa los botones de la barra de navegacion*/
+.header .nav-links li {
+    border-right: 1px solid #ccc; /* Línea gris */
+    padding-right: 20px;
+    margin-right: 20px;
+}
+.header .logo img {
+    height: 60px;
+    width: auto;
+    transition: all 0.0s;
+}
+
+.header .logo img:hover {
+    transform: scale(1.2);
+}
+
+/* 🔹 Botón Contact */
+.header .btn button {
+    margin-left: 20px;
+    font-weight: 700;
+    color: #1b3039;
+    padding: 9px 25px;
+    background: #eceff1;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.header .btn button:hover {
+    background-color: #e2f1f8;
+    color: #ffbc0e;
+    transform: scale(1.1);
+}
+
+/* 🔹 Estilos del Menú */
+.header .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.header .nav-links li {
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.header .nav-links li:hover {
+    transform: scale(1.1);
+}
+
+.header .nav-links a {
+    font-weight: 700;
+    color: #eceff1;
+    text-decoration: none;
+}
+
+.header .nav-links li a:hover {
+    color: #FFD700;
+}
+
+/* 🔹 Botón Hamburguesa */
+.menu-btn {
+    color: white;
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* 🔹 Ocultar checkbox */
+#menu-toggle {
+    display: none;
+}
+
+/* 🔹 Diseño para móviles */
+@media (max-width: 768px) {
+    /* Ocultar el menú siempre cuando el checkbox no esté marcado */
+    #menu-toggle:not(:checked) + .menu-btn + .nav-links {
+      display: none;
+    }
+  
+    .menu-btn {
+      display: block;
+    }
+  
+    .nav-links {
+      /* Ya se oculta por defecto, pero lo refuerzo aquí */
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 85px;
+      right: 0;
+      background: rgba(27, 48, 57, 0.95);
+      width: 100%;
+      text-align: center;
+      padding: 20px 0;
+      box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.3);
+      transition: all 0.5s ease-in-out;
+      border-radius: 0 0 30px 30px;
+    }
+  
+    .nav-links li {
+      margin: 15px 0;
+    }
+  
+    .nav-links a {
+      font-size: 22px;
+      padding: 5px;
+      display: block;
+      transition: color 0.3s ease-in-out;
+    }
+  
+    .nav-links a:hover {
+      color: #ffbc0e;
+    }
+  
+    /* Mostrar menú solo cuando se hace click (checkbox marcado) */
+    #menu-toggle:checked + .menu-btn + .nav-links {
+      display: flex;
+      animation: slideDown 0.3s ease-in-out;
+    }
+  }
+
+/* 🔹 Animación para el menú */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY();
+    }
+}
+/* 🔹 Asegurar que el menú esté visible en pantallas grandes */
+@media (min-width: 769px) {
+  .nav-links {
+      display: flex !important; /* Asegura que el menú SIEMPRE esté visible */
+      position: static;
+      background: none;
+      width: auto;
+      box-shadow: none;
+      padding: 0;
+  }
+}
+
+/*Fondo de 5C*/
+/* Fondo degradado animado y efecto de aparición */
+body {
+    margin: 0;
+    min-height: 100vh;
+    /* Fondo degradado con tonos azules, negro y blanco */
+    background: linear-gradient(135deg, #1e3c72, #2a5298, #151414, #23288c);
+    background-size: 400% 400%;
+    /* Ejecuta el fadeIn y la animación del degradado */
+    animation: fadeIn 5s ease forwards, gradientBG 7s ease forwards;
+  }
+  
+  /* Animación del degradado: se anima hasta el 50% y se queda estático */
+  @keyframes gradientBG {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+
+   /* Estilo del formulario de subida */
+   .upload-form {
+            margin-top: 150px; /* Para que se vea debajo del header fijo */
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .upload-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .upload-form select, .upload-form input[type="file"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .upload-form button {
+            background-color: #2a5298;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .upload-form button:hover {
+            background-color: #1e3c72;
+        }
+
+
+        /* Estilo para el área de archivos subidos */
+.uploaded-files {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+    max-width: 600px;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
+/* Título de la sección */
+.uploaded-files h3 {
+    font-size: 24px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Lista de archivos */
+.uploaded-files ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Estilo de cada archivo */
+.uploaded-files li {
+    background-color: #fff;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Efecto hover para cada archivo */
+.uploaded-files li:hover {
+    background-color: #f9f9f9;
+}
+
+/* Estilo del enlace del archivo */
+.uploaded-files li a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.uploaded-files li a:hover {
+    text-decoration: underline;
+}
+
+/* Información de la fecha */
+.uploaded-files li span {
+    font-size: 14px;
+    color: #777;
+    margin-left: 10px;
+}
+
+/* Contenedor para el mensaje de "Sin archivos" */
+.uploaded-files .no-files-message {
+    font-size: 16px;
+    color: #666;
+    font-style: italic;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Media Queries para Responsividad */
+
+/* Dispositivos pequeños (móviles) */
+@media (max-width: 767px) {
+    .uploaded-files {
+        padding: 15px;
+        max-width: 100%;
+        margin-top: 20px;
+    }
+
+    .uploaded-files h3 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .uploaded-files li {
+        padding: 10px;
+        margin-bottom: 12px;
+    }
+
+    .uploaded-files li a {
+        font-size: 14px;
+    }
+
+    .uploaded-files li span {
+        font-size: 12px;
+    }
+}
+
+/* Dispositivos medianos (tablets) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .uploaded-files {
+        padding: 20px;
+        max-width: 80%;
+        margin-top: 30px;
+    }
+
+    .uploaded-files h3 {
+        font-size: 22px;
+    }
+
+    .uploaded-files li {
+        padding: 12px;
+        margin-bottom: 15px;
+    }
+
+    .uploaded-files li a {
+        font-size: 15px;
+    }
+
+    .uploaded-files li span {
+        font-size: 13px;
+    }
+}
+
+
+        /* Estilo para el mensaje de éxito */
+     
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="logohawking.jpg" alt="Logo">
+          </div>
+        <nav>
+          <input type="checkbox" id="menu-toggle">
+          <label for="menu-toggle" class="menu-btn">☰</label>
+          <ul class="nav-links">
+            <li><a href="dashboard.html">Home</a></li>
+            <li><a href="#">Ver más</a></li>
+          </ul>
+        </nav>
+        <a href="#" class="btn"><button>Contact</button></a>
+    </header>
+
+    <div class="upload-form">
+        <form action="#" method="post" enctype="multipart/form-data">
+            <label for="section">Sección:</label>
+            <select id="section" name="section">
+                <option value="none">Ninguno</option>
+                <option value="section1">4A</option>
+                <option value="section2">4B</option>
+                <option value="section3">5A</option>
+                <option value="section2">5B</option>
+                <option value="section3">5C</option>
+                <!-- Agrega más opciones si lo necesitas -->
+            </select>
+
+            <label for="month">Mes:</label>
+            <select id="month" name="month">
+                <option value="none">Ninguno</option>
+                <option value="enero">Marzo</option>
+                <option value="febrero">Abril</option>
+                <option value="marzo">Mayo</option>
+                <option value="abril">Junio</option>
+                <option value="enero">Julio</option>
+                <option value="febrero">Agosto</option>
+                <option value="marzo">Septiembre</option>
+                <option value="abril">Octubre</option>
+                <option value="marzo">Noviembre</option>
+                <option value="abril">Diciembre</option>
+                <!-- Agrega más opciones si lo necesitas -->
+            </select>
+
+            <label for="file">Subir archivo</label>
+            <input type="file" id="file" name="file">
+
+            <button type="submit">Subir archivo</button>
+
+            <!-- Contenedor para el mensaje de error -->
+            <div id="error-message" style="color: red; display: none; margin-top: 10px;">
+                Error: Seleccione sección y mes válidos.
+            </div>
+        </form>
+        
+    </div>
+    <!-- Espacio separado para los archivos subidos -->
+    <div class="uploaded-files">
+        <h3>Archivos Subidos:</h3>
+        <ul id="file-list">
+            <!-- Los archivos subidos aparecerán aquí -->
+        </ul>
+    </div>
+    <script>
+        
+        document.querySelector("form").addEventListener("submit", async function(event) {
+    event.preventDefault(); // Evitar el envío por defecto del formulario
+
+    const fileInput = document.getElementById("file");
+    const section = document.getElementById("section").value;
+    const month = document.getElementById("month").value;
+    const errorMessage = document.getElementById("error-message");
+
+    if (section === "none" || month === "none") {
+        errorMessage.style.display = "block"; // Muestra el mensaje de error si falta información
+        return;
+    }
+
+    if (fileInput.files.length === 0) {
+        alert("Por favor, selecciona un archivo para subir.");
+        return;
+    }
+
+    errorMessage.style.display = "none"; // Ocultar el mensaje de error si todo está bien
+
+    const file = fileInput.files[0];
+
+    // Verificar si el archivo excede el tamaño máximo permitido (10 MB)
+    const maxFileSize = 10 * 1024 * 1024; // 10 MB en bytes
+
+    if (file.size > maxFileSize) {
+        alert("El archivo excede el límite de 10 MB.");
+        return; // Detiene la ejecución si el archivo es demasiado grande
+    }
+
+    // Subir archivo a Cloudinary
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("upload_preset", "subir_archivos"); // Reemplaza con tu upload preset
+
+    const cloudName = "dyzkllmkj"; // Reemplaza con tu Cloud Name
+    const url = `https://api.cloudinary.com/v1_1/${cloudName}/upload`;
+
+    try {
+        const response = await fetch(url, {
+            method: "POST",
+            body: formData
+        });
+
+        if (!response.ok) {
+            throw new Error(`Error en la subida: ${response.statusText}`);
+        }
+
+        const data = await response.json();
+
+        if (data.secure_url) {
+            alert("¡Archivo subido correctamente!");
+            
+            // Agregar el archivo a la lista de archivos subidos
+            const fileList = document.getElementById("file-list");
+            const listItem = document.createElement("li");
+            const now = new Date();
+            const fechaHora = now.toLocaleString();
+
+            // Después de que el archivo se haya subido correctamente
+            fileInput.value = "";  // Deselecciona el archivo
+
+            // Restablece la sección y el mes a "Ninguno"
+            document.getElementById("section").value = "none";  
+            document.getElementById("month").value = "none";
+            
+            // Mostrar el archivo con el nombre y enlace a Cloudinary
+            listItem.innerHTML = `<a href="${data.secure_url}" target="_blank">${file.name}</a>
+                                  <span style="color: gray; font-size: 14px;"> - Subido el ${fechaHora}</span>`;
+            fileList.appendChild(listItem);
+        } else {
+            throw new Error("Cloudinary no devolvió una URL válida.");
+        }
+    } catch (error) {
+        console.error("Error al conectar con Cloudinary:", error);
+        alert("Hubo un error al subir el archivo. Intenta nuevamente.");
+    }
+});
+
+
+
+        document.querySelector("form").addEventListener("submit", function(event) {
+        const section = document.getElementById("section").value;
+        const month = document.getElementById("month").value;
+        const errorMessage = document.getElementById("error-message");
+
+        // Comprobamos si se ha seleccionado "Ninguno" en alguna de las opciones
+        if (section === "none" || month === "none") {
+            event.preventDefault(); // Previene el envío del formulario
+            errorMessage.style.display = "block"; // Muestra el mensaje de error
+        } else {
+            errorMessage.style.display = "none"; // Oculta el mensaje de error si todo está bien
+        }
+    });
+    </script>
+</body>
+</html>
